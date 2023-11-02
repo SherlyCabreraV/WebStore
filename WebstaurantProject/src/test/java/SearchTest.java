@@ -29,6 +29,7 @@ public class SearchTest extends base {
         SearchPage.goToCart();
         CartPage.clickOnEmptyCartBtn();
         CartPage.confirmEmptyCartPopUp("Your cart is empty.");
+
     }
 
     @AfterMethod

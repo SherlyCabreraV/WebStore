@@ -17,7 +17,6 @@ public class CartPage extends base{
     WebElement emptyCartHeader;
 
 
-
     public CartPage(){
         PageFactory.initElements(driver, this);
     }

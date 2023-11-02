@@ -29,13 +29,13 @@ public class SearchPage extends base{
     }
 
     public void checkItemDescriptionText(String text) {
-
         for (WebElement tableTitle : tableTitles) {
             String elementText = tableTitle.getText();
             if (!elementText.contains(text)) {
                 System.out.println(elementText + " : does not contain " + text);
             }
-            Assert.assertTrue(elementText.contains(text));
+            Assert.assertTrue(elementText.contains(text),"does not contain table");
+
         }
     }
 
@@ -55,14 +55,13 @@ public class SearchPage extends base{
     }
 
     public void checkAllResultsForText(String text) {
-
         try {
             while(nextPageBtn.isDisplayed())
             {
                 checkItemDescriptionText(text);
                 goToNextPage();
                 if (!nextPageBtn2.isDisplayed()) {
-                    throw new LoopExitException("Exiting the loop gracefully.");
+                    break;
                 }
             }
 
